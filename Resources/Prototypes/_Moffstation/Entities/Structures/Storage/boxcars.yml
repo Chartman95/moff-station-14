@@ -1,0 +1,44 @@
+﻿- type: entity
+  id: BaseBoxCar
+  parent: BaseBigBox
+  abstract: true
+  components:
+  - type: CardboardBox
+    effectSound: []     #We aren't snake anymore... it's not a surprise.
+  - type: EntityStorage
+    isCollidableWhenOpen: false
+    openOnMove: false
+    airtight: false
+    capacity: 5 #5 entity capacity baseline.
+  - type: Damageable
+    damageContainer: Box
+  - type: InteractionOutline    #No stealth boxcar so this can be part of the base.
+
+- type: entity
+  id: BoxCar
+  parent: BaseBoxCar
+  name: Box Car
+  description: With a little imagination, and a lot of duct tape, a box can be anything.
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Sprite
+    noRot: true
+    sprite: _Moffstation/Structures/Storage/boxcars.rsi
+    layers:
+    - state: boxcar
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: boxcar_open
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: EntityStorageVisuals
+    stateBaseClosed: boxcar
+    stateDoorOpen: boxcar_open
+  - type: Construction
+    graph: BaseBoxCar
+    node: baseboxcar

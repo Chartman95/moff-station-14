@@ -1,0 +1,21 @@
+- type: construction
+  name: Boxcar
+  id: BoxCar
+  graph: BaseBoxCar
+  startNode: start
+  targetNode: baseboxcar
+  category: construction-category-storage
+  description: With a little imagination, and a lot of duct tape, a box can be anything.
+  icon: { sprite: _Moffstation/Structures/Storage/boxcars.rsi, state: boxcar }
+  objectType: Structure
+
+- type: construction
+  name: Boxulance
+  id: BoxCarAmbulance
+  graph: BaseBoxCar
+  startNode: start
+  targetNode: boxulance
+  category: construction-category-storage
+  description: Transport patients in style, it might help them hold on a little longer.
+  icon: { sprite: _Moffstation/Structures/Storage/boxcars.rsi, state: boxulance}
+  objectType: Structure
