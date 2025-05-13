@@ -290,7 +290,7 @@
         whitelist:
           tags:
           - CrayonWhite
-  - type: Tags                #Moffstation begin
+  - type: Tag                #Moffstation begin
     tags:
     - CrayonBox               #Moffstation End
   - type: Appearance

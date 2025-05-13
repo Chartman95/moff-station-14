@@ -1,2 +1,8 @@
 - type: Tag
+  id: CrayonBox
+
+- type: Tag
   id: DockEmergencyPod
+
+- type: Tag
+  id: SurvivalBoxInsertable

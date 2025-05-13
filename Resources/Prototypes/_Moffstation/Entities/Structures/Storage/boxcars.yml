@@ -1,30 +1,24 @@
 ﻿- type: entity
-  id: BaseBoxCar
-  parent: BaseBigBox
-  abstract: true
+  id: Boxcar
+  parent: BigBox
+  name: Boxcar
+  description: With a little imagination, and a lot of duct tape, a box can be anything.
   components:
   - type: CardboardBox
-    effectSound: []     #We aren't snake anymore... it's not a surprise.
-  - type: EntityStorage
+    quiet: true        #We aren't snake anymore... it's not a surprise.
+  - type: EntityStorage             #Not needed here, use when needing to change the capacity
     isCollidableWhenOpen: false
     openOnMove: false
     airtight: false
     capacity: 5 #5 entity capacity baseline.
   - type: Damageable
     damageContainer: Box
-  - type: InteractionOutline    #No stealth boxcar so this can be part of the base.
-
-- type: entity
-  id: BoxCar
-  parent: BaseBoxCar
-  name: Box Car
-  description: With a little imagination, and a lot of duct tape, a box can be anything.
-  components:
+    damageModifierSet: FlimsyMetallic     #Boxcars are more solid
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 15
+        damage: 50                        #Decent base health pool
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -39,6 +33,26 @@
   - type: EntityStorageVisuals
     stateBaseClosed: boxcar
     stateDoorOpen: boxcar_open
+  - type: Transform
+    noRot: false
+  - type: Rotatable
   - type: Construction
-    graph: BaseBoxCar
-    node: baseboxcar
+    graph: Boxcar
+    node: boxcar
+  - type: Skates
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 5
+    weightlessModifier: 1.5
+#  - type: ItemTogglePointLight
+#  - type: ToggleableLightVisuals
+#  - type: HandheldLight
+#  - type: Battery
+#    maxCharge: 600
+#    startingCharge: 600
+#  - type: PointLight
+#    mask: /Textures/Effects/LightMasks/cone.png
+#    autoRot: true
+#    radius: 8
+#    energy: 2
+#    netsync: false

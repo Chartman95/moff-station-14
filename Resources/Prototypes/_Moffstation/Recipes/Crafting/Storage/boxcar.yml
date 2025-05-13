@@ -1,68 +1,88 @@
 - type: constructionGraph
-  id: BaseBoxCar
+  id: Boxcar
   start: start
   graph:
     - node: start
       edges:
-        - to: baseboxcar
+        - to: boxcar
           steps:
             - material: Cardboard
               amount: 5
+            - material: MetalRod
+              amount: 4
             - tag: Flashlight
               name: a flashlight
               icon:
-                sprite: Tools/flashlight.rsi
+                sprite: Objects/Tools/flashlight.rsi
                 state: flashlight
             - tag: CrayonBox
               name: a box of crayons
               icon:
                 sprite: Objects/Fun/crayons.rsi
                 state: box
-            - tag: CrayonBlack
-              name: black crayon
-              icon:
-                sprite: Objects/Fun/crayons.rsi
-                state: black
             - material: Cable
               amount: 2
               doAfter: 5
 
-    - node: baseboxcar
-      entity: BoxCar
-      edges:
-        - to: boxulance
-          steps:
-            - material: Glass
-              amount: 1
-              doafter: 1
-            - tag: LightBulb
-              name: light bulb
-              icon:
-                sprite: Objects/Power/light_bulb.rsi
-                state: normal
-              doAfter: 1
-            - tag: CrayonBlue
-              name: blue crayon
-              icon:
-                sprite: Objects/Fun/crayons.rsi
-                state: blue
-              doafter: 1
-            - tag: CrayonWhite
-              name: blue crayon
-              icon:
-                sprite: Objects/Fun/crayons.rsi
-                state: blue
-              doafter: 1
-            - tag: BodyBag
-              name: bodybag
-              icon:
-                sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
-                state: bag_folded
-              doafter: 1
-
-        - to: boxicab
-          steps:
-            
-
-    - node: boxulance
-      entity: Boxulance
+    - node: boxcar
+      entity: Boxcar
+#      edges:
+#        - to: boxulance
+#          steps:
+#            - tag: LightBulb
+#              name: light bulb
+#              icon:
+#                sprite: Objects/Power/light_bulb.rsi
+#                state: normal
+#              doAfter: 1
+#            - tag: CrayonBlue
+#              name: blue crayon
+#              icon:
+#                sprite: Objects/Fun/crayons.rsi
+#                state: blue
+#              doafter: 1
+#            - tag: BodyBag
+#              name: bodybag
+#              icon:
+#                sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+#                state: bag_folded
+#              doafter: 1
+#            - tag: Medkit
+#              icon:
+#                sprite: Objects/Specific/Medical/firstaidkits.rsi
+#                state: firstaid
+#              name: medkit
+#              doafter: 1
+#            - tag: DiscreteHealthAnalyzer
+#              icon:
+#                sprite: Objects/Specific/Medical/healthanalyzer.rsi
+#                state: analyzer
+#              name: health analyzer
+#              doAfter: 1
+#            - tag: ProximitySensor
+#              icon:
+#                sprite: Objects/Misc/proximity_sensor.rsi
+#                state: icon
+#              name: proximity sensor
+#              doAfter: 1
+#        - to: boxicab
+#          steps:
+#            - tag: LightBulb
+#              name: light bulb
+#              icon:
+#                sprite: Objects/Power/light_bulb.rsi
+#                state: normal
+#              doAfter: 1
+#            - tag: CrayonYellow
+#              name: yellow crayon
+#              icon:
+#                sprite: Objects/Fun/crayons.rsi
+#                state: blue
+#              doafter: 1
+#
+#        - to: boxicab
+#          steps:
+#
+#
+#    - node: boxulance
+#      entity: Boxulance
