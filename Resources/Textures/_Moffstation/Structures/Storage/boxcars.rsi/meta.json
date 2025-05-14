@@ -1,0 +1,19 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "cardboard.png used as a base and modified by @.chartman for Moffstation.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "boxcar",
+            "directions": 4
+        },
+        {
+            "name": "boxcar_open",
+            "directions": 4
+        }
+    ]
+}
