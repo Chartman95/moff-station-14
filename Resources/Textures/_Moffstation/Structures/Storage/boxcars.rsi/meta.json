@@ -14,6 +14,15 @@
         {
             "name": "boxcar_open",
             "directions": 4
+        },
+        {
+            "name": "boxulance",
+            "directions": 4
+        },
+        {
+            "name": "boxulance_unshaded",
+            "directions": 4
         }
     ]
 }
+

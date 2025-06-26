@@ -143,10 +143,12 @@
             "name": "cap_open"
         },
         {
-            "name": "cardboard"
+            "name": "cardboard",
+            "directions": 4
         },
         {
-            "name": "cardboard_open"
+            "name": "cardboard_open",
+            "directions": 4
         },
         {
             "name": "cardboard_special"

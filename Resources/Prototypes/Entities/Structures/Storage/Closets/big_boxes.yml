@@ -2,10 +2,11 @@
   id: BaseBigBox
   name: cardboard box #it's still just a box
   description: Huh? Just a box...
-  abstract: true
+  abstract: false
   components:
     - type: Transform
-      noRot: true
+      noRot: false      #Moffstation Begin - Adds directions for box movement.
+    - type: Rotatable   #Moffstation End
     - type: Clickable
     - type: Physics
       bodyType: KinematicController

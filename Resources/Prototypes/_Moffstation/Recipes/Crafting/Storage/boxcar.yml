@@ -35,11 +35,11 @@
 #                sprite: Objects/Power/light_bulb.rsi
 #                state: normal
 #              doAfter: 1
-#            - tag: CrayonBlue
-#              name: blue crayon
+#            - tag: CrayonWhite
+#              name: white crayon
 #              icon:
 #                sprite: Objects/Fun/crayons.rsi
-#                state: blue
+#                state: white
 #              doafter: 1
 #            - tag: BodyBag
 #              name: bodybag
@@ -82,7 +82,6 @@
 #
 #        - to: boxicab
 #          steps:
-#
-#
+
 #    - node: boxulance
-#      entity: Boxulance
+#      entity: BoxcarAmbulance

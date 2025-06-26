@@ -6,11 +6,11 @@
   components:
   - type: CardboardBox
     quiet: true     #We aren't snake anymore... it's not a surprise.
-  - type: EntityStorage
-    isCollidableWhenOpen: false
-    openOnMove: false
-    airtight: false
-    capacity: 5 #5 entity capacity baseline.
+#  - type: EntityStorage
+#    isCollidableWhenOpen: false
+#    openOnMove: false
+#    airtight: false
+#    capacity: 5 #5 entity capacity baseline.
   - type: Damageable
     damageContainer: Box
     damageModifierSet: FlimsyMetallic     #Boxcars are more solid
@@ -39,20 +39,55 @@
   - type: Construction
     graph: Boxcar
     node: boxcar
-  - type: Skates
-  - type: MovementSpeedModifier
-    baseWalkSpeed: 3
-    baseSprintSpeed: 5
-    weightlessModifier: 1.5
+#  - type: MovementSpeedModifier
+#    baseWalkSpeed: 3
+#    baseSprintSpeed: 5
+#    weightlessModifier: 1.5
 #  - type: ItemTogglePointLight
 #  - type: ToggleableLightVisuals
 #  - type: HandheldLight
 #  - type: Battery
 #    maxCharge: 600
 #    startingCharge: 600
-#  - type: PointLight
-#    mask: /Textures/Effects/LightMasks/cone.png
-#    autoRot: true
-#    radius: 8
-#    energy: 2
-#    netsync: false
+  - type: PointLight
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    radius: 7
+    energy: 2
+    netsync: false
+
+- type: entity
+  id: BoxcarAmbulance
+  parent: Boxcar
+  name: Boxulance
+  description: Transport patients in style, it might help them hold on a little longer.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _Moffstation/Structures/Storage/boxcars.rsi
+    layers:
+    - state: boxulance
+      map: [ "enum.StorageVisualLayers.Base" ]
+    - state: boxulance_unshaded
+    - state: boxcar_open
+      map: [ "enum.StorageVisualLayers.Door" ]
+  - type: EntityStorageVisuals
+    stateBaseClosed: boxulance
+    stateDoorOpen: boxcar_open
+  - type: AntiRottingContainer
+  - type: Medibot
+    treatments:
+      Alive:
+        reagent: Tricordrazine
+        quantity: 30
+        minDamage: 0
+        maxDamage: 50
+      Critical:
+        reagent: Inaprovaline
+        quantity: 15
+  - type: HTN
+    rootTask:
+      task: BoxulanceCompound
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Pai

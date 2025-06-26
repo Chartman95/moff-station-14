@@ -1,0 +1,29 @@
+- type: htnCompound
+  id: BoxulanceCompound
+  branches:
+    - tasks:                                          #Copied from Medibot HTN but removed the movement aspects
+        - !type:HTNPrimitiveTask
+          operator: !type:PickNearbyInjectableOperator
+            targetKey: InjectTarget
+            targetMoveKey: TargetCoordinates
+
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: medibot-start-inject
+            hidden: true
+
+        - !type:HTNPrimitiveTask
+          operator: !type:SetFloatOperator
+            targetKey: IdleTime
+            amount: 3
+
+        - !type:HTNPrimitiveTask
+          operator: !type:WaitOperator
+            key: IdleTime
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: IdleTime
+
+        - !type:HTNPrimitiveTask
+          operator: !type:MedibotInjectOperator
+            targetKey: InjectTarget

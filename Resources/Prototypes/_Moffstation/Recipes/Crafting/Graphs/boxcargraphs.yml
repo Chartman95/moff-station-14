@@ -11,8 +11,8 @@
 
 #- type: construction
 #  name: Boxulance
-#  id: BoxCarAmbulance
-#  graph: BoxCar
+#  id: BoxcarAmbulance
+#  graph: Boxcar
 #  startNode: start
 #  targetNode: boxulance
 #  category: construction-category-storage
